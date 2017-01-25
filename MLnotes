@@ -1,5 +1,4 @@
-
-Machine learning is computational statistics. 
+_Machine learning is computational statistics._
 
 Getting labelled information extract more information from the dataset and create new labels.
 
@@ -209,7 +208,247 @@ A class of classifiers called Ensemble Learning.
 Boosting is the best. (Subsets, instead of random choice)
 
 
+----------------------------------------------------------------------------------------------------------------------------------------
+========================================================================================================================================
 
+
+
+Self driving cars are a supervised learning example.
+Acerous - Has horns. And classify them accordingly
+Usupervised - Clustering, Finding an akward entry
+We take in features and produce labels.
+If you take two feautres and plot them on the x and y asix (CALLED A SCATTER PLOT), and you plot likes in green and dislikes in red you can easily see what feature mix is preferred.
+Sometime you don't even need ML you can just use scatter plots.
+mACHINE LEARNING ESSENTIALLY DRAWS A LINE BETWEEN THE SCATTER PLOT and creates what is known as a decision surface.
+When decision survase is a straigth line it is called linear decision surface.
+Machine Learning is just the creation of a decision surface
+Naive Bayes -> Common wayto find a DS (Decision Surface)
+GUASSIAN nAIVE bAYES ->
+Bayes rule is from Rev Thomas Bayes that used the base rule to infer the existence of God.
+Prior Probability * New Evidence -> Posterior Probability
+0.01 P(+|C) = Posterior Also tes the Not cancer
+Baysian should not even be a thin a name, it is too obcious.
+Good explanation of Naive Bayes. (Prior Probability or Base Prob should always have been a thing)
+What it essentially tells you is whether it is more likley to be Lable A or B by multiplying everything together.
+The issue wit Naive bayes is that it ignores the order of the words or data. Naive Bayes is Efficient.
+Don't think of Algorithms as black boxes, know the mechanics. For instand the word CHICAGO Bulls, should actually be one word. This is one of the things that Google Struggled with in the beginning.
+svm - Support Vector Machines.
+Identifying who is the author of an unseen email. Scary as fuck.
+SVM literally outputs a line, bayes uses a formula outputs a label. Line should maximise the difference between the line and the neaerst point of either of the two classes. This is called a margin. SVM maximises the robustness by maximising the margins.
+svm DOES NOT support calssification errors, the first response is to classify correctly, thereafter it maximises the margin. However, SVM will ignore outliers.
+skLEARN GIVEs you the adv and disadv of SVM.
+Therefore Naive Bayes might be a little bit curvey while, SVM is a straight line.
+nON-LINEAR svm can do even weirder things.
+X2 + Y2 -> This will create a hyperplane and the measure of the origina is larger for x than y, therefore they would now be linearly separable.
+You can use other features such as the absalute value of x and y.
+https://www.evernote.com/l/AHCBOo13PyxAx4omA3op2blwQZ71OmYzJLs
+SVM - The kernel Trick -> Functions called kernels that take a low dimensional space and make it high dimensional to turn into a separable labels. Then you get non linear sepration.
+So you will create SVM linearly, doesn't wrk, do the kernel trick, send back separable data and now find the decision area.
+You can spedcify your own kernels that you want ot use. So kernels bascially make the algorithm usable, instaead of changing hte algorithm (base) we change the inputs with a kernel.
+Parameters for SVM -> Kernel, C and Gamma First -> linear, non-lin -> rbf
+-> Gamma
+C-> Controls tradeoff between smooth decision boundry and classifying training points correctly.
+Both Kernel, Gamma and C can cause overfitting.
+SVM does not work to well in large datasets with a lot of noise, where a naive bayes will work better.
+What this course do is cool, it verbally and visually explains the algorithms.
+Supervised Algorithms -> Naive Bayes, SVM, Decision Trees.
+Decision Trees:
+https://www.evernote.com/l/AHC_ztiVe4pOCJ3Pf5vGedcN7fj4p3SxYt8
+Basically cutting booleans. Choose at which values of x and y is hte best splits. If you split x one, y has to be split twice etcc.
+Decision trees are awesome, very mechanical.
+cOMPUTER aLGORITHM finds the decision boundreis automatrically.
+Decision treest just like SVM can have little islands.
+These algorithms are called Classifiers: An from classifiers we always want to know the answer to what is the accuracy.
+min_sample_split -> How many tree spilts should there be. It means how many sample are left. When only 2 samples are left then the process stops. You can make this higher not to overfit.
+Entropy -> Controls how to split. & Purity, -> Here you want to find variables that make purest splits, without too many from the wrong labels.
+Entropy ofcourse has a formula. Entropy is the opposite of purity. Entropy is important when there is 3 or more features.
+Infroation Gain -> Weight of the parent and a deduction of weighted average of children. This does not seem too hard.
+Found speedlimit to provide the best split, then all you use is speed and ignore the other variables. But maybe it can do this at every split -> It probably does.
+sCIKIT learn Gini is Entropy. (Or something Close)
+Bias-Variance Dillema (High variance -> Overfitting, Bias -> Not really looking at the data, just cares about simplicity in fomrula)/
+What is fun is to build classifiers out of classifiers.
+k nearest neighbors random forest adaboost (sometimes also called boosted decision tree)
+Random Forest and Adaboost are "ensemble method" meaning they are meta classifiers ususally built from decision treest. That would make sense, why it is called Forest. Ensemble means a group of muscisions performing at once. Many classifiers working together, similar as to having many people with various opinions voting in the president, however, sometimes they can fuck up if you don't choose the smartest people to create synergy. These two are quite similar.
+Enron has millions of emails. -> Cn easily identify fraud.
+You can look at the Enron emails and idetify people of interest that might have colluded. Nobody seems to have tried that yet with the dataset, and that is quite weird. "I am two steps ahead of you machetying my way thoguh the jungle, and you are just behind me lookigng at how it is done, for the sole reson of not only imitating me but also finding ways to improve on what you see."
+Person of interest -> Everyone Connected after the fact. -> Look at what language they use, see if other people have the same language.
+Awesome, to see if you have enough events -> See where the trading data events comes close to the asimptote.
+More data gives you a better answer than a fine tuned algorithm.
+Now continuous supervised learning has to do with an output that is continuous and not discrete such as fast and slow (seen previoulsy)
+We use regressions for continuous supervised learning.
+Erros in continous is different to the erros in classification.
+R-squared -> Lower r-squared on testing data, overfitting happenign.
+There is several algorithms that help you find the minimum sum of squares.
+OLS - WHAT SKLEAR USES Gradient Descent.
+Can't use absalute value, due to ambiguity, there can be mulitple linear lines that maximises then, with square there is only one line. Very true.
+sse IS NOT PERFECT -> mMore data SSE higher. So you cant really use Sum of Square Errors, instead use Rsquared. It discribes the goodness of fit. Howmuch of the output is described by the input. 'ie.e. the whole point of performing a regression" - Definitely more reliable than SSE.
+If the data has two lines, you cna split and fit two linear regressions.
+Same X cant have various ys
+ALL ML is, is describing patterns in data.
+Output for supervised classification is discrete (class labels) and for continuous is a number.
+Also instead of a decision boundry, regressions have a "best fit line"
+Also classification evaluates with accuracy and regression with sum of squares or r-sqaured.
+Regression is just a different type of supervised learning, it has many analogs.
+Mutlivariate regression (Is easy) (Even siulataneous)
+Here i see people plot input input a lot with y as answer internally, but sometimes I see input output charts.
+3 Things that can cause outliers:
+Snsor Malfunction Data Entry Error Greak Events
+wE OFTEN IGNORE THEM (DUE TO OVERFITTING), but sometimes they are important such as in fraud detection.
+Contrived Example (Created Artifically and unrelaisticly, not a natural phenomena)
+Practical way to identify outliers, work almost with all MLAs.
+Train, Remove ~ 10%, Train Again. [Basically 10% winsorization OF RESIDUAL ERROR] Then probably produces better result.
+uNSUPERVISED LEARNING IS IMPORTANT Because most real life data does not have flags attached. and to attach flags, you can do it manually or make use of unsupervised learning to create labels so that you can use supervised learning, so supervised and unsupervised can built onto eachother.
+Dimensionaltiy reduction, to take 2d and put it into 1 d.
+sO TWO things
+Dimensionality Reduction
+& Clustering.
+k-Means - Most used clustering algorithm.
+2 steps
+Assign
+Optimise
+You can think of the quadratic length between k-means centre points and surrounding points as rubber bands for which you would like to minimse the resultant stored potential energy. Naturally the toal size of the band should be minimised.
+You have to pick up the initial centriod. You can start randomly. 3 clusters mean there should be three clusters. Awesome this works very easily. -> However what you can do, is change the amount of initialisations to start with. (Otherwise local minimums can create issues )
+The initial placement of the centroid can have a large affect on the final outcome with noisy clustering.
+The scalability of methods/algorithms are quite important, if sample size increases how wil it behave.
+Gemoetry (Metrics) - Metrics used by algortihms
+K-means is what you would call a hill climbing algorithm
+Feature Scaling
+His shirt is a function of height + weight
+Feature scaling is basically feature weighting
+Weight will inherently dominate.
+Feature Scaling chucks them between zero and one.
+The issue with the feature scaling formula is that it is prone to be biased by outliers.
+It is called a min/max rescaler.
+What is nice for me is that beta's would be more intuitive.
+Algorithms in which two dimensions affect the outcome would change as a result of feature scaling. It will only affects SVM and K-Means clustering.
+EACH WORD CANT BE AN INPUT FEATURE
+Instead use the bag of words. frequency - remove stopwords
+
+Bag of wrds does not take order into account, it does take length into account indirectly and it can't really take complicated phrass into account..
+
+In sklear we call it count-vectoriser and not bag of words. 
+Stemmer -> Parse out the stem from similar words. Can use NLTK.
+FIRST DO STEMMING THEN BAG OF WORDS
+Here is the fact of the matter, sometimes you are not so concerned about the words that occur the most (TF- Term Frequency). Instead you are concerned about the IDF - Inverse Documetn Frequency, meaning that you care about the scarcity of the words that occur, i.e. give more weighting to words that occur less or that are rare.
+-> The rare words might tell you the most.
+Feature selection - Make everything as simple as possible but no simpler.
+Use human intuition to add new features. (After unsupervised learning, add features)
+Human Intuition: Strong email connections between eachother (People of interest)
+Code up the feature
+Beware of bugs when working with features.
+Feautures can be removed for noisiness, multicolinearity, overfitted, slow processing.
+You want information not features.
+You want the bear minimum of feautres that give you the right answer.
+Text data would have tens of thousand of features. The percentile selection, only use the very top layer, the top 1% or 10% of the feautres that best describes the relationships.
+High Dimensionality Data means Data with many features.
+There is ofcourse hte expectation that you would do a little bit better on the training than the test set.
+We are concerned with the quality of the model: We can do this by Balancing Error With the Number of Features. We can plot them to make sure.
+Number of feautures is directly related to overfitting. Regularitsation says that their is an optimal point, we can use formulas to do this. lASSO REGRESSION is an example of this. Instead of just minimising SSE, it also minismises PARAMATER and COEFICCIENT OF REGRESSION (These to multiply and become the penalty)
+It basically sets the feautrures coefficents to zero. [iT BASICALLY JSUT CHOSSES THE HIGHEST R2 features, THE REST IT DELETES)
+PCA
+A one dimensional line is where y=3 where you dont need x to express anything. A diagonal line has a slope and an x, however, if you shifted the axis, i.e. rotaed them then it can becoe one dimensional y' and x' is the shifted axi. PCA focuses on shifts in axes. So the data should not surve too much or have too much noise, it should look like a straight track with only a few rocks on the side.
+PCA creates a new coordinate systems. Here you also find the centre of the data. And then it calculates the new middle to the furtherst point delta x and delta .
+
+______________________________________________________________________________________________________________________________________________
+========================================================================================================================================
+
+
+Steps. Collecting. Munging Data Exploration and Visualisation [ Stage you might forget ] Transformation. Modelling Stage with MLA.
+As a data-scientists you don't have to know how to create them, but you do have to know the pros and cons of each method.
+Machine Learning is the name given to a class of generalisable algorithms that are data driven.
+If your issue is not data driven, or if it can be solved though some other means then just do it. ML can't be applied to any problem.
+It is all about data driven questions.
+ML best for dimensionality reduction, bunch of inputs give outputs yes or no.
+ML very good in reinforcement learning, iterations and priorotising more points or machine programmed successes.
+Remember don't jut disgard features because they are weak. Sometimes you have to combine features together to make them strong.
+NB allow your intuition to guide you into collecting the best features for the problem you want to solve.
+Series in Pandas are homogenous -> Series meaning columns. That is the same as the nd-array for numpy. However pandas include a dataframe for multiple data types. Dataframe is a collection of series. R & P similar datastructures. Dataframe objects for R and P similar.
+Columns/Series/Features/Attributes -> 100s of names for the same thing.
+Continuous Feature and Catagorical Features
+Encoding and Featurizing data.
+For catagorical data -> Textual, the objective is to encode this catagorical representation into numbers so that the machine can understand it.
+For ordinal, i.e. where the order of the catagories matter. Then we cans use the Ask Type.
+If nominal then just do the same again. Select non-order. It would probably do it alphabetically.
+The best however would be to put them into boolean features. However, the previous method might even be good enough. If it doesn't work then do boolean.
+Feauturising text - Bag of words. Now not boolean feature but a count.
+How to featurise an image - READ IN EVERY PIXEL AS A ONE DIMENSIONAL ARRAY, YOU MIGHT LOSE SOME 2D RELATIONSHIPS (NEIGHBOURS).
+Audio encoding is very similar to image encoding. -> You basically put it in one dimension.
+Wrangling - Missing Data - You can forward and backward fill for time series (Due to likelihood of auctocorrelation) You can interpolate You can drop a row for missing data, but don't drop a column because they have your feature variables. You can drop duplicates.
+Other wrangling issues, people entering wronge info, or biased data.
+The only reason for visualisation is to make something more apparent or epiphanised for yourslelf.
+Matlib (school) is much like matplotlib.
+What is amaxing is that pandas diretly hook up with matplotlib, so it makes it even easier.
+Histograms are one fo the seven basic tools of quality for graphical intefaces. It tells you about the ditribution of your feature.
+Once you visualise your features you will come to note that it might be skew, Scaling can take one this skewness and make it more gaussian. This will become importnat [nbnb] reason being that some algorithms require the data to be gaussian.
+Seven:
+Cause-and-effect diagram (also known as the "fishbone" or Ishikawa diagram) Check sheet Control chart Histogram Pareto chart Scatter diagram Stratification (alternately, flow chart or run chart)
+Scatterplot has to be continous or at least ordinal.
+We can interpret 3 dimensions so why not use them. "Interpret means understand, however we can not see it, we can only understand 3d"
+So this is all basically feature plots!!!
+Can't do 4d plots so what now.
+You can possibly introduce a time dimension, but that is as far as it goes.
+10,000 features -?
+Parralel Coordinates. -> However it only support on size. Scaling can work, but then the values on the axis does not make sense anymore. -> A better way can be to chart multiple charts and group the similar sized features together.
+Andrews Curve -> This is another multi-dimensional chart. Look at the mean in the group instead of plotting everything.
+Now you have chosen all the features you like then next step is to use a trnasformer before you discard non idnependent or non-informatie features.
+Have use a lot of preprocessing trnsformers such as that extrapolate Nan stuff. These tranformers coming up is a bit different, they get done just before the model gets run.
+PCA is an unsupervised dimensionaltiy reduction algorithm. It is actually a tranformer.
+PCA takes in for input your set of potentially correlated features and then it shuffles them up a little bit and then it spits out or returns a brand new set of linearly uncorrelated linearly independent features.
+It find the center of the data by calculating the mean. Then looks for directino of maximium variance. It then tries to do the same. Every new direction it finds has to be orthganol to where it is.
+Now with PCA you have a liner feature.
+However, the visual method above is in practice done with covariance matrices and eigenvalues. Using statistics and linear algebra.
+PCA gets rid of noise. It can take input from an academic survey, 10s of questions and then at the end it interprets and knows what you are after "How awesome was the course and the instructur" It takes a high dimenionaltiy data set (i.e. has a lot of feautres and then it creates a simpler dataset. PCA won't label those questions but it gives you some hints.
+PCA is such a fast algorihm, the very first thing to do once you get a high dimensionality dataset is to run a PCA model. Then drop it down to two or three variables that you can visualise before you proceed.
+PCA gotchas. PCA is sensitive to feature scaling. First normalise or standardise your feature set. With a larger dataset use randomise PCA. PCA only caputures linear relations.
+If your relations are not linear you might have to look at another dimensionality reduction algorithm, such as isomap.
+Isomap.
+It is completely different to PCA. More natural, you can only run so fast then your fucked. Shortest neighbourhood paths. Takes much longer to run and is irreversible.
+K-means clustering (K + Means) -> It will try and find the centre of clusters. Once centres are assigned to clusters they would move to the mean of the cluster.
+K-means is not the same as KNN K - Nearest Neighbours.
+It performs very well, and is the basis for other clustering methods.
+K - Nearest Neighbours. KNN relies on distance. Very easy. Isomap is the implementtion of the KNN algo. Importantly, KNN is often one of the first classifiers a programmer intrested in coding algos would program. I think KNN has to be labelled?
+////I think classifiers are simply algorithms that classify. //
+In linera regression the dependent varioable y has to be contious the independetn variables can be continuous or ordinal.
+Decision Tree Requires Labels. It is resillient to the scale and lenght. Bascially many if, else, then statements ets. Even people can classify decision trees by just following through with it. They also have no issues with non-linear data.
+Decision Trees -Are used for decision making adn classification.
+Random Forest - Less overfitting. Harder to interpret, but otherwise the best model. Always use this, don't worry about interpretation.
+Averages many individual trees on different subset.
+
+
+______________________________________________________________________________________________________________________________________________
+========================================================================================================================================
+
+NB with ML, you are not trying to test correlation or causation, all you want to do is to do if you can accurately classify or predict something using certain inputs that is available. You did statistics here. And with the location, you basically showed that you can use employees happiness to detrmine in what location they live, but this does not lead to anything important. With the glassdoor study you can say fro some reason the data employees give relates to a specific region, this can be testemant to the wider culture of the workforce and other influences. thtat one state experiences above another.
+We are far from anything miraculouse, because we need data.
+
+Autonomous Mobile Robots
+Have model of environment (See)
+Perceive the environment (Think)
+Act (Act)
+-> However, you cant see and think fully if you don't move around.
+Kinematics and Motion is important.
+Laser Scanner -> Gives the time of flight.
+Cameras -> Good but a lot of noise.
+Images -> Filtering and Edge Detection.
+-> You also get keypoint feutures: Gradient indifferent: You can rotate the image and would still know wjat it is, you get this when you zoom in. Some examples include, Fast, Surf, Sift, Brisk.
+Then you use this to localise the robot (find its location)
+The robot has to move to know where it is.
+To move there is two planning paths.
+Global path planning (Grids) and Local path planning (Close).
+Three degrees of freedom. (Freedom to move one object in three different ways. (The leg of a human and a dog)
+Perception is important, it is sensing, creating raw data and extracting information.
+The first level is obtaining raw data from sensors.
+The second step is extracting (low level) features from the raw data.
+Then features are used to identify objects, such as humans doors, legal or social letters etc.
+Most robots can only identify low level features such as lines and colours, however, they are trying very hard to be able to identify objects.
+The ultimate perception system should be AI complete, meaning, at the level of human intelligence.
+Cameras complement lasers.
+Encoders from sensors to digital signals.
+Image Filtering relates ot accepting and rejecting certain components.
+Wow images and pixels also have correlation and convolution.
+Images like words, "visual words"
+Robotics combines AI with bionics, physics and engineering.
+Business Ai combines AI with business. Error Propagation Law -> I have no idea what this is.
 
 
 
