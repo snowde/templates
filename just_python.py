@@ -8,3 +8,6 @@ id_df = bloom[col].groupby('id')
 a_mean = id_df.mean().reset_index()
 train_new = train_new.fillna(a_mean)
 sum(train_new.isnull().sum(axis=1))
+
+train["std"] = train.groupby('id').y.std()
+corr = train.corr().ix["y", "std"]
