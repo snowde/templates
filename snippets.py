@@ -10,3 +10,11 @@ ID = dataset_test['id']
 
 # iloc creates a way for reading in a dataframe based on columns and rows.
 
+PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
+export PATH
+
+Honestly I would scratch all this and install python, pip and virtualenv using homebrew so everything is in /usr/local/bin/
+
+Editing Bash:
+  
+  Honestly I would scratch all this and install python, pip and virtualenv using homebrew so everything is in /usr/local/bin/
