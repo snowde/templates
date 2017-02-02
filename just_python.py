@@ -11,3 +11,5 @@ sum(train_new.isnull().sum(axis=1))
 
 train["std"] = train.groupby('id').y.std()
 corr = train.corr().ix["y", "std"]
+
+merged = pd.merge(price, fiscal, on="date", how="outer")
